@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&family=Big+Shoulders+Display:wght@600;700&family=Josefin+Sans:wght@400;700&family=Kumbh+Sans:wght@400;700&family=Lexend+Deca&family=Rubik:wght@400;500;700&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Interactive card details form</title>
+  <link rel="stylesheet" href="./style.css">
+  
+  
+</head>
+<body>
+
+  <main>
+    <div class="container">
+      <div class="card">
+        <div class="card-top">
+          <div class="card-circle">
+            <div></div>
+            <div></div>
+          </div>
+          <div class="card-details">
+            <div id="card-number-dis">0000 0000 0000 0000</div>
+            <div class="card-name-date">
+              <div id="card-name">Arjun vijay</div>
+              <div id="card-date">
+                <div id="card-month">09</div>/
+                <div id="card-year">11</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-bottom">
+          <div id="cvc">000</div>
+        </div>
+      </div>
+
+      <div id="before-submit">
+      <div class="card-details-form">
+        <form action="" onsubmit="return false">
+          <div>
+            <label for="">CARDHOLDER NAME</label> <br>
+            <input type="text" placeholder="e.g. Arjun Vijay"  id="card-holder-name"> <br>
+            <span id="card-holder-name-warning"></span>
+          </div>
+          <div>
+            <label for="">CARD NUMBER</label> <br>
+            <input type="number" placeholder="e.g. 1234 5678 9123 0000"
+            oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+            maxlength="16" id="card-number"
+            onkeydown="javascript: return event.keyCode == 69 ? false : true"> 
+            <br>
+            <span id="card-number-warning"></span>
+          </div>
+          <div class="cvc-exp-date">
+            <div class="date">
+              <label for="">EXP.DATE (MM/YY)</label>
+              <div class="month-year">
+                <input type="number"
+                placeholder="MM"
+                oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                maxlength="2" id="month"> 
+                <input type="number"
+                placeholder="YY"
+                oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                maxlength="2" id="year">
+              </div>
+              <span id="card-date-warning"></span>
+            </div>
+            <div class="cvc-form">
+              <label for="">CVC</label>
+              <input id="cvc-input"
+              placeholder="e.g. 123"
+              oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+              maxlength="3"
+              type="number">
+              <span id="cvc-warning"></span>
+            </div>
+          </div>
+          <input id="confirm-btn" type="submit" value="Confirm">
+        </form>
+      </div>
+    </div>
+    <div id="after-submit">
+      <img width="100" src="./images/icon-complete.svg" alt="">
+      <h1>THANK YOU!</h1>
+      <p>We've added your card details</p>
+      <button id="continue">Continue</button>
+      
+
+    </div>
+    </div> 
+    
+  
+
+
+  </main>
+
+</body>
+<script src="./script.js"></script>
+</html>
